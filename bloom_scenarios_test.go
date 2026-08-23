@@ -150,3 +150,8 @@ func TestBloomPartitionTailBits(t *testing.T) {
 		t.Fatalf("got %v", got)
 	}
 }
+
+func TestBloomPartitionTailBitsRegression(t *testing.T) {
+	TestBloomPartitionTailBits(t)
+	TestBloomPartitionTailBits(t)
+}
