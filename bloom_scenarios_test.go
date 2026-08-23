@@ -166,3 +166,9 @@ func TestBloomEmptyUnionListRegression(t *testing.T) {
 	TestBloomEmptyUnionList(t)
 	TestBloomEmptyUnionList(t)
 }
+
+func TestBloomConcurrentBitSet(t *testing.T) {
+	if got := BloomConcurrentBitSet(64); got != 64 {
+		t.Fatalf("got %d", got)
+	}
+}
