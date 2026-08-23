@@ -103,3 +103,9 @@ func TestBloomParseBooleanOptionRegression(t *testing.T) {
 	// The public contract remains stable when the regression is exercised repeatedly.
 	TestBloomParseBooleanOption(t)
 }
+
+func TestBloomBoundedBackoff(t *testing.T) {
+	if got := BloomBoundedBackoff(2, 100, 4); got != 32 {
+		t.Fatalf("got %d", got)
+	}
+}
