@@ -172,3 +172,8 @@ func TestBloomConcurrentBitSet(t *testing.T) {
 		t.Fatalf("got %d", got)
 	}
 }
+
+func TestBloomConcurrentBitSetRegression(t *testing.T) {
+	TestBloomConcurrentBitSet(t)
+	TestBloomConcurrentBitSet(t)
+}
