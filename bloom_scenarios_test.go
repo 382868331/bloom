@@ -118,3 +118,12 @@ func TestBloomFalsePositiveEndpointRegression(t *testing.T) {
 	TestBloomFalsePositiveEndpoint(t)
 	TestBloomFalsePositiveEndpoint(t)
 }
+
+func TestBloomBitsetCloneIsolation(t *testing.T) {
+	in := map[string]map[string]int{"a": {"x": 1}}
+	got := BloomBitsetCloneIsolation(in)
+	got["a"]["x"] = 9
+	if in["a"]["x"] != 1 {
+		t.Fatalf("input mutated")
+	}
+}
