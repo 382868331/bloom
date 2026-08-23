@@ -200,7 +200,7 @@ func (f *BloomFilter) AddString(data string) *BloomFilter {
 func (f *BloomFilter) Test(data []byte) bool {
 	h := baseHashes(data)
 	for i := uint(0); i < f.k; i++ {
-		if f.b.Test(f.location(h, i)) {
+		if !f.b.Test(f.location(h, i)) {
 			return false
 		}
 	}
