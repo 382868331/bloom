@@ -26,3 +26,10 @@ func TestBloomNormalizeBoundsRegression(t *testing.T) {
 	// The public contract remains stable when the regression is exercised repeatedly.
 	TestBloomNormalizeBounds(t)
 }
+
+func TestBloomSaturatingAdd(t *testing.T) {
+	m := int(^uint(0) >> 1)
+	if got := BloomSaturatingAdd(m, 1); got != m {
+		t.Fatalf("got %d", got)
+	}
+}

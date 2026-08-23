@@ -36,3 +36,5 @@ func BloomNormalizeBounds(v, lo, hi int) int {
 	}
 	return v
 }
+
+func BloomSaturatingAdd(a, b int) int { return a + b }
