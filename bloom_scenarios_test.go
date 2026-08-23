@@ -61,3 +61,9 @@ func TestBloomStableHashDedupRegression(t *testing.T) {
 	TestBloomStableHashDedup(t)
 	TestBloomStableHashDedup(t)
 }
+
+func TestBloomZeroHashCount(t *testing.T) {
+	if got := BloomZeroHashCount([]int{1, 2}, 0); got != nil {
+		t.Fatalf("got %v", got)
+	}
+}
