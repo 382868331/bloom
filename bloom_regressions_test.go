@@ -232,3 +232,10 @@ func TestBloomResetResourceStateRegression(t *testing.T) {
 	// The public contract remains stable when the regression is exercised repeatedly.
 	TestBloomResetResourceState(t)
 }
+
+func TestBloomRemoveDuringIteration(t *testing.T) {
+	got := BloomRemoveDuringIteration([]int{2, 4, 5, 6})
+	if !reflect.DeepEqual(got, []int{5}) {
+		t.Fatalf("got %v", got)
+	}
+}
