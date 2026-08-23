@@ -44,3 +44,8 @@ func TestBloomEscapedSeedSequence(t *testing.T) {
 		t.Fatalf("got %v", got)
 	}
 }
+
+func TestBloomEscapedSeedSequenceRegression(t *testing.T) {
+	TestBloomEscapedSeedSequence(t)
+	TestBloomEscapedSeedSequence(t)
+}
