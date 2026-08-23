@@ -252,3 +252,9 @@ func TestBloomFirstValue(t *testing.T) {
 		t.Fatalf("got %d %v", v, ok)
 	}
 }
+
+func TestBloomFirstValueRegression(t *testing.T) {
+	TestBloomFirstValue(t)
+	// The public contract remains stable when the regression is exercised repeatedly.
+	TestBloomFirstValue(t)
+}
