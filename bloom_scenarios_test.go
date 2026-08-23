@@ -132,3 +132,9 @@ func TestBloomBitsetCloneIsolationRegression(t *testing.T) {
 	TestBloomBitsetCloneIsolation(t)
 	TestBloomBitsetCloneIsolation(t)
 }
+
+func TestBloomReverseKeyUnicode(t *testing.T) {
+	if got := BloomReverseKeyUnicode("A界🙂"); got != "🙂界A" {
+		t.Fatalf("got %q", got)
+	}
+}
