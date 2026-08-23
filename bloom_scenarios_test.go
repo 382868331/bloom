@@ -49,3 +49,10 @@ func TestBloomEscapedSeedSequenceRegression(t *testing.T) {
 	TestBloomEscapedSeedSequence(t)
 	TestBloomEscapedSeedSequence(t)
 }
+
+func TestBloomStableHashDedup(t *testing.T) {
+	got := BloomStableHashDedup([]int{3, 1, 3, 2, 1})
+	if !reflect.DeepEqual(got, []int{3, 1, 2}) {
+		t.Fatalf("got %v", got)
+	}
+}
