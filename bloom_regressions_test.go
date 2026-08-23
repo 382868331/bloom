@@ -167,3 +167,9 @@ func TestBloomSlidingWindowsRegression(t *testing.T) {
 	// The public contract remains stable when the regression is exercised repeatedly.
 	TestBloomSlidingWindows(t)
 }
+
+func TestBloomJoinOptionalParts(t *testing.T) {
+	if got := BloomJoinOptionalParts(nil, ","); got != "" {
+		t.Fatalf("got %q", got)
+	}
+}
