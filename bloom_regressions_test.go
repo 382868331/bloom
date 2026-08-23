@@ -39,3 +39,10 @@ func TestBloomSaturatingAddRegression(t *testing.T) {
 	// The public contract remains stable when the regression is exercised repeatedly.
 	TestBloomSaturatingAdd(t)
 }
+
+func TestBloomSplitEscapedTokens(t *testing.T) {
+	got := BloomSplitEscapedTokens("a\\;b;c")
+	if !reflect.DeepEqual(got, []string{"a;b", "c"}) {
+		t.Fatalf("got %v", got)
+	}
+}

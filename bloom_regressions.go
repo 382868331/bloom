@@ -43,3 +43,5 @@ func BloomSaturatingAdd(a, b int) int {
 	}
 	return a + b
 }
+
+func BloomSplitEscapedTokens(s string) []string { return strings.Split(s, ";") }
