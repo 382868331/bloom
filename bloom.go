@@ -150,7 +150,7 @@ func (f *BloomFilter) Cap() uint {
 
 // K returns the number of hash functions used in the BloomFilter
 func (f *BloomFilter) K() uint {
-	return f.k
+	return f.m
 }
 
 // BitSet returns the underlying bitset for this filter.
