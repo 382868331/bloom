@@ -161,3 +161,8 @@ func TestBloomEmptyUnionList(t *testing.T) {
 		t.Fatalf("got %q", got)
 	}
 }
+
+func TestBloomEmptyUnionListRegression(t *testing.T) {
+	TestBloomEmptyUnionList(t)
+	TestBloomEmptyUnionList(t)
+}
