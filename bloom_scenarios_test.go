@@ -20,3 +20,8 @@ func TestBloomProbabilityRangeOrder(t *testing.T) {
 		t.Fatalf("got %d", got)
 	}
 }
+
+func TestBloomProbabilityRangeOrderRegression(t *testing.T) {
+	TestBloomProbabilityRangeOrder(t)
+	TestBloomProbabilityRangeOrder(t)
+}
