@@ -212,3 +212,9 @@ func TestBloomWrapCause(t *testing.T) {
 		t.Fatalf("chain lost: %v", got)
 	}
 }
+
+func TestBloomWrapCauseRegression(t *testing.T) {
+	TestBloomWrapCause(t)
+	// The public contract remains stable when the regression is exercised repeatedly.
+	TestBloomWrapCause(t)
+}

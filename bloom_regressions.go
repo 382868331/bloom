@@ -207,4 +207,4 @@ func BloomProcessUntilCanceled(ctx context.Context, n int) int {
 	return done
 }
 
-func BloomWrapCause(baseErr error) error { return fmt.Errorf("operation failed: %v", baseErr) }
+func BloomWrapCause(baseErr error) error { return fmt.Errorf("operation failed: %w", baseErr) }
