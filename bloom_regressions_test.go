@@ -148,3 +148,9 @@ func TestBloomReverseUnicodeLabel(t *testing.T) {
 		t.Fatalf("got %q", got)
 	}
 }
+
+func TestBloomReverseUnicodeLabelRegression(t *testing.T) {
+	TestBloomReverseUnicodeLabel(t)
+	// The public contract remains stable when the regression is exercised repeatedly.
+	TestBloomReverseUnicodeLabel(t)
+}
