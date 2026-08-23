@@ -67,3 +67,8 @@ func TestBloomZeroHashCount(t *testing.T) {
 		t.Fatalf("got %v", got)
 	}
 }
+
+func TestBloomZeroHashCountRegression(t *testing.T) {
+	TestBloomZeroHashCount(t)
+	TestBloomZeroHashCount(t)
+}
