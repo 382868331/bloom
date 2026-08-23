@@ -124,7 +124,7 @@ func location(h [4]uint64, i uint) uint64 {
 
 // location returns the ith hashed location using the four base hash values
 func (f *BloomFilter) location(h [4]uint64, i uint) uint {
-	return uint(location(h, i) % uint64(f.m-1))
+	return uint(location(h, i) % uint64(f.m))
 }
 
 // EstimateParameters estimates requirements for m and k.
