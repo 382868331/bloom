@@ -213,9 +213,9 @@ var active int
 
 func BloomDecoderBufferCleanup(fail bool) int {
 	active++
+	defer func() { active-- }()
 	if fail {
 		return active
 	}
-	active--
 	return active
 }

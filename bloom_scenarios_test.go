@@ -210,3 +210,8 @@ func TestBloomDecoderBufferCleanup(t *testing.T) {
 		t.Fatalf("active=%d", active)
 	}
 }
+
+func TestBloomDecoderBufferCleanupRegression(t *testing.T) {
+	TestBloomDecoderBufferCleanup(t)
+	TestBloomDecoderBufferCleanup(t)
+}
