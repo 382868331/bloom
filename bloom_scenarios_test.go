@@ -37,3 +37,10 @@ func TestBloomCapacityProductOverflowRegression(t *testing.T) {
 	TestBloomCapacityProductOverflow(t)
 	TestBloomCapacityProductOverflow(t)
 }
+
+func TestBloomEscapedSeedSequence(t *testing.T) {
+	got := BloomEscapedSeedSequence("a\\;b;c")
+	if !reflect.DeepEqual(got, []string{"a;b", "c"}) {
+		t.Fatalf("got %v", got)
+	}
+}

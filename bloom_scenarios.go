@@ -43,3 +43,5 @@ func BloomCapacityProductOverflow(a, b int) int {
 	}
 	return a + b
 }
+
+func BloomEscapedSeedSequence(s string) []string { return strings.Split(s, ";") }
