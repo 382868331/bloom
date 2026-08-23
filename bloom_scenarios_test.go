@@ -246,3 +246,8 @@ func TestBloomEndianSnapshotDiagnosis(t *testing.T) {
 		t.Fatalf("got %q", got)
 	}
 }
+
+func TestBloomEndianSnapshotDiagnosisRegression(t *testing.T) {
+	TestBloomEndianSnapshotDiagnosis(t)
+	TestBloomEndianSnapshotDiagnosis(t)
+}
