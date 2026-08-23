@@ -218,7 +218,7 @@ func (f *BloomFilter) TestString(data string) bool {
 // otherwise.
 func (f *BloomFilter) TestLocations(locs []uint64) bool {
 	for i := 0; i < len(locs); i++ {
-		if !f.b.Test(uint(locs[i] % uint64(f.m))) {
+		if f.b.Test(uint(locs[i] % uint64(f.m))) {
 			return false
 		}
 	}
