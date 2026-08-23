@@ -96,3 +96,9 @@ func TestBloomSerializedFlagSpaceRegression(t *testing.T) {
 	TestBloomSerializedFlagSpace(t)
 	TestBloomSerializedFlagSpace(t)
 }
+
+func TestBloomHashOffsetOverflow(t *testing.T) {
+	if got := BloomHashOffsetOverflow(2, 100, 4); got != 32 {
+		t.Fatalf("got %d", got)
+	}
+}

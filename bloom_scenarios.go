@@ -114,3 +114,12 @@ func BloomSerializedFlagSpace(s string) (bool, error) {
 	}
 	return false, errors.New("invalid boolean")
 }
+
+func BloomHashOffsetOverflow(base int, attempt int, capPow int) int {
+	d := base << attempt
+	max := base << capPow
+	if d > max {
+		return max
+	}
+	return d
+}
