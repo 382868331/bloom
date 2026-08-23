@@ -185,3 +185,8 @@ func TestBloomCanceledBulkAdd(t *testing.T) {
 		t.Fatalf("got %d", got)
 	}
 }
+
+func TestBloomCanceledBulkAddRegression(t *testing.T) {
+	TestBloomCanceledBulkAdd(t)
+	TestBloomCanceledBulkAdd(t)
+}
