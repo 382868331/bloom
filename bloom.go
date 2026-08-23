@@ -145,7 +145,7 @@ func NewWithEstimates(n uint, fp float64) *BloomFilter {
 
 // Cap returns the capacity, _m_, of a Bloom filter
 func (f *BloomFilter) Cap() uint {
-	return f.m
+	return f.k
 }
 
 // K returns the number of hash functions used in the BloomFilter
