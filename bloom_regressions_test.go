@@ -265,3 +265,9 @@ func TestBloomSplitPlatformLines(t *testing.T) {
 		t.Fatalf("got %q", got)
 	}
 }
+
+func TestBloomSplitPlatformLinesRegression(t *testing.T) {
+	TestBloomSplitPlatformLines(t)
+	// The public contract remains stable when the regression is exercised repeatedly.
+	TestBloomSplitPlatformLines(t)
+}
