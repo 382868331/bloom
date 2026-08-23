@@ -102,3 +102,8 @@ func TestBloomHashOffsetOverflow(t *testing.T) {
 		t.Fatalf("got %d", got)
 	}
 }
+
+func TestBloomHashOffsetOverflowRegression(t *testing.T) {
+	TestBloomHashOffsetOverflow(t)
+	TestBloomHashOffsetOverflow(t)
+}
