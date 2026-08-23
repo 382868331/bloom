@@ -179,3 +179,9 @@ func TestBloomJoinOptionalPartsRegression(t *testing.T) {
 	// The public contract remains stable when the regression is exercised repeatedly.
 	TestBloomJoinOptionalParts(t)
 }
+
+func TestBloomCountConcurrentUpdates(t *testing.T) {
+	if got := BloomCountConcurrentUpdates(64); got != 64 {
+		t.Fatalf("got %d", got)
+	}
+}
