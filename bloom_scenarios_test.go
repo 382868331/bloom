@@ -72,3 +72,10 @@ func TestBloomZeroHashCountRegression(t *testing.T) {
 	TestBloomZeroHashCount(t)
 	TestBloomZeroHashCount(t)
 }
+
+func TestBloomUnicodeKeyPreview(t *testing.T) {
+	got := BloomUnicodeKeyPreview("A界B", 2)
+	if got != "A界" || !utf8.ValidString(got) {
+		t.Fatalf("got %q", got)
+	}
+}
