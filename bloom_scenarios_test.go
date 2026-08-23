@@ -107,3 +107,9 @@ func TestBloomHashOffsetOverflowRegression(t *testing.T) {
 	TestBloomHashOffsetOverflow(t)
 	TestBloomHashOffsetOverflow(t)
 }
+
+func TestBloomFalsePositiveEndpoint(t *testing.T) {
+	if got := BloomFalsePositiveEndpoint([]int{1, 2, 3}, 1); got != 3 {
+		t.Fatalf("got %d", got)
+	}
+}
