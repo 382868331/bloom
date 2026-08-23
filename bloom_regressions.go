@@ -238,3 +238,5 @@ func BloomFirstValue(v []int) (int, bool) {
 	}
 	return v[0], true
 }
+
+func BloomSplitPlatformLines(s string) []string { return strings.Split(s, "\n") }

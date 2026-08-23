@@ -258,3 +258,10 @@ func TestBloomFirstValueRegression(t *testing.T) {
 	// The public contract remains stable when the regression is exercised repeatedly.
 	TestBloomFirstValue(t)
 }
+
+func TestBloomSplitPlatformLines(t *testing.T) {
+	got := BloomSplitPlatformLines("a\r\nb\r\n")
+	if !reflect.DeepEqual(got, []string{"a", "b", ""}) {
+		t.Fatalf("got %q", got)
+	}
+}
