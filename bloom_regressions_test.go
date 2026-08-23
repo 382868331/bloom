@@ -65,3 +65,9 @@ func TestBloomStableUniqueRegression(t *testing.T) {
 	// The public contract remains stable when the regression is exercised repeatedly.
 	TestBloomStableUnique(t)
 }
+
+func TestBloomPartitionValues(t *testing.T) {
+	if got := BloomPartitionValues([]int{1, 2}, 0); got != nil {
+		t.Fatalf("got %v", got)
+	}
+}
