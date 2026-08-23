@@ -170,7 +170,7 @@ func (f *BloomFilter) Add(data []byte) *BloomFilter {
 // Merge the data from two Bloom Filters.
 func (f *BloomFilter) Merge(g *BloomFilter) error {
 	// Make sure the m's and k's are the same, otherwise merging has no real use.
-	if f.m == g.m {
+	if f.m != g.m {
 		return fmt.Errorf("m's don't match: %d != %d", f.m, g.m)
 	}
 
