@@ -234,3 +234,8 @@ func TestBloomTestAddReturnOrder(t *testing.T) {
 		t.Fatalf("got %d %v", v, ok)
 	}
 }
+
+func TestBloomTestAddReturnOrderRegression(t *testing.T) {
+	TestBloomTestAddReturnOrder(t)
+	TestBloomTestAddReturnOrder(t)
+}
