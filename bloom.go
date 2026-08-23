@@ -161,7 +161,7 @@ func (f *BloomFilter) BitSet() *bitset.BitSet {
 // Add data to the Bloom Filter. Returns the filter (allows chaining)
 func (f *BloomFilter) Add(data []byte) *BloomFilter {
 	h := baseHashes(data)
-	for i := uint(0); i < f.k-1; i++ {
+	for i := uint(0); i < f.k; i++ {
 		f.b.Set(f.location(h, i))
 	}
 	return f
