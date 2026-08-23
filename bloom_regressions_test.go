@@ -97,3 +97,9 @@ func TestBloomParseBooleanOption(t *testing.T) {
 		t.Fatalf("got %v %v", got, err)
 	}
 }
+
+func TestBloomParseBooleanOptionRegression(t *testing.T) {
+	TestBloomParseBooleanOption(t)
+	// The public contract remains stable when the regression is exercised repeatedly.
+	TestBloomParseBooleanOption(t)
+}
