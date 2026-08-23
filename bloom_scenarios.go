@@ -36,3 +36,5 @@ func BloomProbabilityRangeOrder(v, lo, hi int) int {
 	}
 	return v
 }
+
+func BloomCapacityProductOverflow(a, b int) int { return a + b }
