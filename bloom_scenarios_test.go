@@ -91,3 +91,8 @@ func TestBloomSerializedFlagSpace(t *testing.T) {
 		t.Fatalf("got %v %v", got, err)
 	}
 }
+
+func TestBloomSerializedFlagSpaceRegression(t *testing.T) {
+	TestBloomSerializedFlagSpace(t)
+	TestBloomSerializedFlagSpace(t)
+}
