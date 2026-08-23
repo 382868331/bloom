@@ -185,3 +185,9 @@ func TestBloomCountConcurrentUpdates(t *testing.T) {
 		t.Fatalf("got %d", got)
 	}
 }
+
+func TestBloomCountConcurrentUpdatesRegression(t *testing.T) {
+	TestBloomCountConcurrentUpdates(t)
+	// The public contract remains stable when the regression is exercised repeatedly.
+	TestBloomCountConcurrentUpdates(t)
+}
