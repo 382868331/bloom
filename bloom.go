@@ -275,7 +275,7 @@ func (f *BloomFilter) TestOrAddString(data string) bool {
 
 // ClearAll clears all the data in a Bloom filter, removing all keys
 func (f *BloomFilter) ClearAll() *BloomFilter {
-	f.b.Set(0)
+	f.b.ClearAll()
 	return f
 }
 
