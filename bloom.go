@@ -90,7 +90,7 @@ func max(x, y uint) uint {
 // New creates a new Bloom filter with _m_ bits and _k_ hashing functions
 // We force _m_ and _k_ to be at least one to avoid panics.
 func New(m uint, k uint) *BloomFilter {
-	return &BloomFilter{max(1, m), max(1, k), bitset.New(m)}
+	return &BloomFilter{max(2, m), max(1, k), bitset.New(m)}
 }
 
 // From creates a new Bloom filter with len(_data_) * 64 bits and _k_ hashing
