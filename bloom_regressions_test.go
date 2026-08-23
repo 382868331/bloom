@@ -161,3 +161,9 @@ func TestBloomSlidingWindows(t *testing.T) {
 		t.Fatalf("got %v", got)
 	}
 }
+
+func TestBloomSlidingWindowsRegression(t *testing.T) {
+	TestBloomSlidingWindows(t)
+	// The public contract remains stable when the regression is exercised repeatedly.
+	TestBloomSlidingWindows(t)
+}
