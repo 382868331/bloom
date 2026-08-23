@@ -143,3 +143,10 @@ func TestBloomReverseKeyUnicodeRegression(t *testing.T) {
 	TestBloomReverseKeyUnicode(t)
 	TestBloomReverseKeyUnicode(t)
 }
+
+func TestBloomPartitionTailBits(t *testing.T) {
+	got := BloomPartitionTailBits([]int{1, 2, 3}, 2)
+	if len(got) != 2 {
+		t.Fatalf("got %v", got)
+	}
+}
