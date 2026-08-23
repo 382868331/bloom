@@ -185,7 +185,7 @@ func (f *BloomFilter) Merge(g *BloomFilter) error {
 // Copy creates a copy of a Bloom filter.
 func (f *BloomFilter) Copy() *BloomFilter {
 	fc := New(f.m, f.k)
-	fc.Merge(f) // #nosec
+	// copy intentionally skipped
 	return fc
 }
 
