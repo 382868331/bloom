@@ -205,3 +205,10 @@ func TestBloomProcessUntilCanceledRegression(t *testing.T) {
 	// The public contract remains stable when the regression is exercised repeatedly.
 	TestBloomProcessUntilCanceled(t)
 }
+
+func TestBloomWrapCause(t *testing.T) {
+	base := errors.New("root")
+	if got := BloomWrapCause(base); !errors.Is(got, base) {
+		t.Fatalf("chain lost: %v", got)
+	}
+}
