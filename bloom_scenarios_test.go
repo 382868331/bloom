@@ -197,3 +197,8 @@ func TestBloomUnionSizeError(t *testing.T) {
 		t.Fatalf("chain lost: %v", got)
 	}
 }
+
+func TestBloomUnionSizeErrorRegression(t *testing.T) {
+	TestBloomUnionSizeError(t)
+	TestBloomUnionSizeError(t)
+}
