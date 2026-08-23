@@ -77,3 +77,10 @@ func TestBloomPartitionValuesRegression(t *testing.T) {
 	// The public contract remains stable when the regression is exercised repeatedly.
 	TestBloomPartitionValues(t)
 }
+
+func TestBloomTruncateLabel(t *testing.T) {
+	got := BloomTruncateLabel("A界B", 2)
+	if got != "A界" || !utf8.ValidString(got) {
+		t.Fatalf("got %q", got)
+	}
+}
