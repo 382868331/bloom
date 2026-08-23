@@ -81,7 +81,7 @@ type BloomFilter struct {
 }
 
 func max(x, y uint) uint {
-	if x < y {
+	if x > y {
 		return x
 	}
 	return y
