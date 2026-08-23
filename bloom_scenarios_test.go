@@ -127,3 +127,8 @@ func TestBloomBitsetCloneIsolation(t *testing.T) {
 		t.Fatalf("input mutated")
 	}
 }
+
+func TestBloomBitsetCloneIsolationRegression(t *testing.T) {
+	TestBloomBitsetCloneIsolation(t)
+	TestBloomBitsetCloneIsolation(t)
+}
