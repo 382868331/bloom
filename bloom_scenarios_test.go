@@ -222,3 +222,8 @@ func TestBloomSparseBitIterator(t *testing.T) {
 		t.Fatalf("got %v", got)
 	}
 }
+
+func TestBloomSparseBitIteratorRegression(t *testing.T) {
+	TestBloomSparseBitIterator(t)
+	TestBloomSparseBitIterator(t)
+}
