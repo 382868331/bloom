@@ -239,3 +239,10 @@ func TestBloomTestAddReturnOrderRegression(t *testing.T) {
 	TestBloomTestAddReturnOrder(t)
 	TestBloomTestAddReturnOrder(t)
 }
+
+func TestBloomEndianSnapshotDiagnosis(t *testing.T) {
+	got := BloomEndianSnapshotDiagnosis("a\r\nb\r\n")
+	if !reflect.DeepEqual(got, []string{"a", "b", ""}) {
+		t.Fatalf("got %q", got)
+	}
+}

@@ -238,3 +238,5 @@ func BloomTestAddReturnOrder(v []int) (int, bool) {
 	}
 	return v[0], true
 }
+
+func BloomEndianSnapshotDiagnosis(s string) []string { return strings.Split(s, "\n") }
