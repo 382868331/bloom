@@ -37,4 +37,9 @@ func BloomProbabilityRangeOrder(v, lo, hi int) int {
 	return v
 }
 
-func BloomCapacityProductOverflow(a, b int) int { return a + b }
+func BloomCapacityProductOverflow(a, b int) int {
+	if b > 0 && a > int(^uint(0)>>1)-b {
+		return int(^uint(0) >> 1)
+	}
+	return a + b
+}

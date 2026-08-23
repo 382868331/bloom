@@ -32,3 +32,8 @@ func TestBloomCapacityProductOverflow(t *testing.T) {
 		t.Fatalf("got %d", got)
 	}
 }
+
+func TestBloomCapacityProductOverflowRegression(t *testing.T) {
+	TestBloomCapacityProductOverflow(t)
+	TestBloomCapacityProductOverflow(t)
+}
