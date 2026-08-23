@@ -215,3 +215,10 @@ func TestBloomDecoderBufferCleanupRegression(t *testing.T) {
 	TestBloomDecoderBufferCleanup(t)
 	TestBloomDecoderBufferCleanup(t)
 }
+
+func TestBloomSparseBitIterator(t *testing.T) {
+	got := BloomSparseBitIterator([]int{2, 4, 5, 6})
+	if !reflect.DeepEqual(got, []int{5}) {
+		t.Fatalf("got %v", got)
+	}
+}
