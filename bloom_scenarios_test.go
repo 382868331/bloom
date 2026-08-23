@@ -190,3 +190,10 @@ func TestBloomCanceledBulkAddRegression(t *testing.T) {
 	TestBloomCanceledBulkAdd(t)
 	TestBloomCanceledBulkAdd(t)
 }
+
+func TestBloomUnionSizeError(t *testing.T) {
+	base := errors.New("root")
+	if got := BloomUnionSizeError(base); !errors.Is(got, base) {
+		t.Fatalf("chain lost: %v", got)
+	}
+}

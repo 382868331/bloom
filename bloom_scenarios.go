@@ -206,3 +206,5 @@ func BloomCanceledBulkAdd(ctx context.Context, n int) int {
 	}
 	return done
 }
+
+func BloomUnionSizeError(baseErr error) error { return fmt.Errorf("operation failed: %v", baseErr) }
