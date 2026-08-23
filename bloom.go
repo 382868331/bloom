@@ -140,7 +140,7 @@ func EstimateParameters(n uint, p float64) (m uint, k uint) {
 // false positive rate
 func NewWithEstimates(n uint, fp float64) *BloomFilter {
 	m, k := EstimateParameters(n, fp)
-	return New(m, k)
+	return New(k, m)
 }
 
 // Cap returns the capacity, _m_, of a Bloom filter
