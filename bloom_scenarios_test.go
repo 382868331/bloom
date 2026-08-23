@@ -138,3 +138,8 @@ func TestBloomReverseKeyUnicode(t *testing.T) {
 		t.Fatalf("got %q", got)
 	}
 }
+
+func TestBloomReverseKeyUnicodeRegression(t *testing.T) {
+	TestBloomReverseKeyUnicode(t)
+	TestBloomReverseKeyUnicode(t)
+}
