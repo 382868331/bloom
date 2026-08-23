@@ -173,3 +173,9 @@ func TestBloomJoinOptionalParts(t *testing.T) {
 		t.Fatalf("got %q", got)
 	}
 }
+
+func TestBloomJoinOptionalPartsRegression(t *testing.T) {
+	TestBloomJoinOptionalParts(t)
+	// The public contract remains stable when the regression is exercised repeatedly.
+	TestBloomJoinOptionalParts(t)
+}
