@@ -231,3 +231,10 @@ func BloomSparseBitIterator(in []int) []int {
 	}
 	return out
 }
+
+func BloomTestAddReturnOrder(v []int) (int, bool) {
+	if len(v) == 0 {
+		return 1, false
+	}
+	return v[0], true
+}

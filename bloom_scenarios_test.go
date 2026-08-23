@@ -227,3 +227,10 @@ func TestBloomSparseBitIteratorRegression(t *testing.T) {
 	TestBloomSparseBitIterator(t)
 	TestBloomSparseBitIterator(t)
 }
+
+func TestBloomTestAddReturnOrder(t *testing.T) {
+	v, ok := BloomTestAddReturnOrder(nil)
+	if ok || v != 0 {
+		t.Fatalf("got %d %v", v, ok)
+	}
+}
