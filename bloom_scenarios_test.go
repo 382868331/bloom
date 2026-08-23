@@ -177,3 +177,11 @@ func TestBloomConcurrentBitSetRegression(t *testing.T) {
 	TestBloomConcurrentBitSet(t)
 	TestBloomConcurrentBitSet(t)
 }
+
+func TestBloomCanceledBulkAdd(t *testing.T) {
+	ctx, cancel := context.WithCancel(context.Background())
+	cancel()
+	if got := BloomCanceledBulkAdd(ctx, 20); got != 0 {
+		t.Fatalf("got %d", got)
+	}
+}
