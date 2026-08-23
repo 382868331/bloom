@@ -191,3 +191,11 @@ func TestBloomCountConcurrentUpdatesRegression(t *testing.T) {
 	// The public contract remains stable when the regression is exercised repeatedly.
 	TestBloomCountConcurrentUpdates(t)
 }
+
+func TestBloomProcessUntilCanceled(t *testing.T) {
+	ctx, cancel := context.WithCancel(context.Background())
+	cancel()
+	if got := BloomProcessUntilCanceled(ctx, 20); got != 0 {
+		t.Fatalf("got %d", got)
+	}
+}
