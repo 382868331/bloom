@@ -84,3 +84,10 @@ func TestBloomUnicodeKeyPreviewRegression(t *testing.T) {
 	TestBloomUnicodeKeyPreview(t)
 	TestBloomUnicodeKeyPreview(t)
 }
+
+func TestBloomSerializedFlagSpace(t *testing.T) {
+	got, err := BloomSerializedFlagSpace(" TRUE ")
+	if err != nil || !got {
+		t.Fatalf("got %v %v", got, err)
+	}
+}
