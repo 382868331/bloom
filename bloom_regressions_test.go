@@ -115,3 +115,9 @@ func TestBloomBoundedBackoffRegression(t *testing.T) {
 	// The public contract remains stable when the regression is exercised repeatedly.
 	TestBloomBoundedBackoff(t)
 }
+
+func TestBloomSelectUpperQuantile(t *testing.T) {
+	if got := BloomSelectUpperQuantile([]int{1, 2, 3}, 1); got != 3 {
+		t.Fatalf("got %d", got)
+	}
+}
