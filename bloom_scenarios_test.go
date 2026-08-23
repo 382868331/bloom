@@ -155,3 +155,9 @@ func TestBloomPartitionTailBitsRegression(t *testing.T) {
 	TestBloomPartitionTailBits(t)
 	TestBloomPartitionTailBits(t)
 }
+
+func TestBloomEmptyUnionList(t *testing.T) {
+	if got := BloomEmptyUnionList(nil, ","); got != "" {
+		t.Fatalf("got %q", got)
+	}
+}
