@@ -71,3 +71,9 @@ func TestBloomPartitionValues(t *testing.T) {
 		t.Fatalf("got %v", got)
 	}
 }
+
+func TestBloomPartitionValuesRegression(t *testing.T) {
+	TestBloomPartitionValues(t)
+	// The public contract remains stable when the regression is exercised repeatedly.
+	TestBloomPartitionValues(t)
+}
