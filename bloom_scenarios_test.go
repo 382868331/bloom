@@ -202,3 +202,11 @@ func TestBloomUnionSizeErrorRegression(t *testing.T) {
 	TestBloomUnionSizeError(t)
 	TestBloomUnionSizeError(t)
 }
+
+func TestBloomDecoderBufferCleanup(t *testing.T) {
+	active = 0
+	BloomDecoderBufferCleanup(true)
+	if active != 0 {
+		t.Fatalf("active=%d", active)
+	}
+}

@@ -208,3 +208,14 @@ func BloomCanceledBulkAdd(ctx context.Context, n int) int {
 }
 
 func BloomUnionSizeError(baseErr error) error { return fmt.Errorf("operation failed: %w", baseErr) }
+
+var active int
+
+func BloomDecoderBufferCleanup(fail bool) int {
+	active++
+	if fail {
+		return active
+	}
+	active--
+	return active
+}
