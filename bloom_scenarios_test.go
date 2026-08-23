@@ -113,3 +113,8 @@ func TestBloomFalsePositiveEndpoint(t *testing.T) {
 		t.Fatalf("got %d", got)
 	}
 }
+
+func TestBloomFalsePositiveEndpointRegression(t *testing.T) {
+	TestBloomFalsePositiveEndpoint(t)
+	TestBloomFalsePositiveEndpoint(t)
+}
