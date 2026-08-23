@@ -127,3 +127,12 @@ func TestBloomSelectUpperQuantileRegression(t *testing.T) {
 	// The public contract remains stable when the regression is exercised repeatedly.
 	TestBloomSelectUpperQuantile(t)
 }
+
+func TestBloomCloneNestedState(t *testing.T) {
+	in := map[string]map[string]int{"a": {"x": 1}}
+	got := BloomCloneNestedState(in)
+	got["a"]["x"] = 9
+	if in["a"]["x"] != 1 {
+		t.Fatalf("input mutated")
+	}
+}
