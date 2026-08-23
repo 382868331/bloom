@@ -79,3 +79,8 @@ func TestBloomUnicodeKeyPreview(t *testing.T) {
 		t.Fatalf("got %q", got)
 	}
 }
+
+func TestBloomUnicodeKeyPreviewRegression(t *testing.T) {
+	TestBloomUnicodeKeyPreview(t)
+	TestBloomUnicodeKeyPreview(t)
+}
