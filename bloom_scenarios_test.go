@@ -56,3 +56,8 @@ func TestBloomStableHashDedup(t *testing.T) {
 		t.Fatalf("got %v", got)
 	}
 }
+
+func TestBloomStableHashDedupRegression(t *testing.T) {
+	TestBloomStableHashDedup(t)
+	TestBloomStableHashDedup(t)
+}
