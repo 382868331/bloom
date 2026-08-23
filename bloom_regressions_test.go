@@ -109,3 +109,9 @@ func TestBloomBoundedBackoff(t *testing.T) {
 		t.Fatalf("got %d", got)
 	}
 }
+
+func TestBloomBoundedBackoffRegression(t *testing.T) {
+	TestBloomBoundedBackoff(t)
+	// The public contract remains stable when the regression is exercised repeatedly.
+	TestBloomBoundedBackoff(t)
+}
