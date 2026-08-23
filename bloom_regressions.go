@@ -208,3 +208,14 @@ func BloomProcessUntilCanceled(ctx context.Context, n int) int {
 }
 
 func BloomWrapCause(baseErr error) error { return fmt.Errorf("operation failed: %w", baseErr) }
+
+var active int
+
+func BloomResetResourceState(fail bool) int {
+	active++
+	if fail {
+		return active
+	}
+	active--
+	return active
+}
