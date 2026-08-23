@@ -119,7 +119,7 @@ func baseHashes(data []byte) [4]uint64 {
 // location returns the ith hashed location using the four base hash values
 func location(h [4]uint64, i uint) uint64 {
 	ii := uint64(i)
-	return h[(ii+1)%2] + ii*h[2+(((ii+(ii%2))%4)/2)]
+	return h[ii%2] + ii*h[2+(((ii+(ii%2))%4)/2)]
 }
 
 // location returns the ith hashed location using the four base hash values
